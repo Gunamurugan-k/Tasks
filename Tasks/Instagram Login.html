@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 2 - Instagram Login Page</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body{ background:#fafafa; font-family:'Segoe UI', Helvetica, Arial, sans-serif; }
+  .insta-card{ border:1px solid #dbdbdb; border-radius:1px; max-width:350px; }
+  .insta-logo{ font-family:'Brush Script MT', cursive; font-size:3rem; text-align:center; margin:2rem 0 1.5rem; }
+  .form-control{ background:#fafafa; border:1px solid #dbdbdb; font-size:.85rem; padding:.6rem .7rem; }
+  .btn-insta{ background:#0095f6; border-color:#0095f6; font-weight:600; font-size:.9rem; }
+  .btn-insta:hover{ background:#1877f2; }
+  .divider-or{ display:flex; align-items:center; text-align:center; color:#8e8e8e; font-size:.8rem; font-weight:600; margin:1rem 0; }
+  .divider-or::before, .divider-or::after{ content:''; flex:1; border-bottom:1px solid #dbdbdb; }
+  .divider-or:not(:empty)::before{ margin-right:.75em; }
+  .divider-or:not(:empty)::after{ margin-left:.75em; }
+  .fb-login{ color:#385185; font-weight:600; font-size:.9rem; }
+  .lower-card{ border:1px solid #dbdbdb; max-width:350px; }
+</style>
+</head>
+<body>
+<div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+  <div class="card insta-card p-4">
+    <div class="insta-logo">Instagram</div>
+    <form>
+      <input type="text" class="form-control mb-2 rounded-1" placeholder="Phone number, username, or email">
+      <input type="password" class="form-control mb-3 rounded-1" placeholder="Password">
+      <button type="submit" class="btn btn-insta w-100 rounded-3 py-1">Log in</button>
+    </form>
+    <div class="divider-or">OR</div>
+    <div class="text-center mb-3">
+      <a href="#" class="fb-login text-decoration-none">
+        <i class="bi"></i> Log in with Facebook
+      </a>
+    </div>
+    <div class="text-center">
+      <a href="#" class="small text-secondary text-decoration-none">Forgot password?</a>
+    </div>
+  </div>
+  <div class="card lower-card p-3 mt-3 text-center">
+    <span class="small">Don't have an account? <a href="#" class="text-decoration-none fw-semibold" style="color:#0095f6;">Sign up</a></span>
+  </div>
+  <p class="mt-4 small text-secondary">Get the app.</p>
+</div>
+</body>
+</html>
