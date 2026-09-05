@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerHub - Job Portal</title>
+
+  <link rel="stylesheet" href="Job Portal.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <div class="logo">
+      <div class="logo-box">
+        <i class="fa-solid fa-briefcase"></i>
+      </div>
+
+      <h2>Career<span>Hub</span></h2>
+    </div>
+
+
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#jobs">Find Jobs</a>
+      <a href="#categories">Categories</a>
+      <a href="#companies">Companies</a>
+    </nav>
+
+
+    <div class="nav-buttons">
+      <button class="login-btn">Login</button>
+      <button class="signup-btn">Create Account</button>
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        <i class="fa-solid fa-circle-check"></i>
+        #1 Job Platform for Freshers
+      </div>
+
+      <h1>
+        Find a job that matches
+        <span>your skills.</span>
+      </h1>
+
+      <p class="hero-description">
+        Search thousands of job opportunities from trusted companies
+        and build the career you've always wanted.
+      </p>
+
+
+      <!-- SEARCH -->
+
+      <div class="search-wrapper">
+
+        <div class="search-input">
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <div>
+            <label>What</label>
+
+            <input
+              type="text"
+              placeholder="Job title or skill"
+            >
+          </div>
+
+        </div>
+
+
+        <div class="search-line"></div>
+
+
+        <div class="search-input">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          <div>
+            <label>Where</label>
+
+            <input
+              type="text"
+              placeholder="City or location"
+            >
+          </div>
+
+        </div>
+
+
+        <button class="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Search Jobs
+        </button>
+
+      </div>
+
+
+      <div class="popular">
+
+        <span>Popular searches:</span>
+
+        <a href="#">Web Developer</a>
+        <a href="#">Java Developer</a>
+        <a href="#">Data Analyst</a>
+        <a href="#">UI/UX</a>
+
+      </div>
+
+
+      <!-- STATS -->
+
+      <div class="stats">
+
+        <div>
+          <h3>18K+</h3>
+          <p>Jobs Available</p>
+        </div>
+
+        <div>
+          <h3>6.5K+</h3>
+          <p>Companies</p>
+        </div>
+
+        <div>
+          <h3>32K+</h3>
+          <p>Job Seekers</p>
+        </div>
+
+        <div>
+          <h3>12K+</h3>
+          <p>Successful Hires</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- COMPANIES -->
+
+  <section class="companies" id="companies">
+
+    <p>Trusted by companies around the world</p>
+
+    <div class="company-list">
+
+      <div>
+        <i class="fa-brands fa-google"></i>
+        Google
+      </div>
+
+      <div>
+        <i class="fa-brands fa-microsoft"></i>
+        Microsoft
+      </div>
+
+      <div>
+        amazon
+      </div>
+
+      <div>
+        TCS
+      </div>
+
+      <div>
+        Infosys
+      </div>
+
+      <div>
+        Wipro
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CATEGORIES -->
+
+  <section class="categories section-padding" id="categories">
+
+    <div class="section-title">
+
+      <div>
+        <p class="section-small-title">
+          EXPLORE CAREERS
+        </p>
+
+        <h2>Popular job categories</h2>
+
+        <p>
+          Find opportunities based on your skills and interests.
+        </p>
+      </div>
+
+      <a href="#">
+        View all categories
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+      <div class="category-card">
+
+        <div class="category-icon development">
+          <i class="fa-solid fa-code"></i>
+        </div>
+
+        <div>
+          <h3>Software Development</h3>
+          <p>2,250 Jobs</p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <div class="category-icon design">
+          <i class="fa-solid fa-pen-ruler"></i>
+        </div>
+
+        <div>
+          <h3>UI / UX Design</h3>
+          <p>780 Jobs</p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <div class="category-icon analyst">
+          <i class="fa-solid fa-chart-simple"></i>
+        </div>
+
+        <div>
+          <h3>Business Analyst</h3>
+          <p>640 Jobs</p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <div class="category-icon data">
+          <i class="fa-solid fa-database"></i>
+        </div>
+
+        <div>
+          <h3>Data Science</h3>
+          <p>920 Jobs</p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <div class="category-icon marketing">
+          <i class="fa-solid fa-bullhorn"></i>
+        </div>
+
+        <div>
+          <h3>Digital Marketing</h3>
+          <p>510 Jobs</p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <div class="category-icon finance">
+          <i class="fa-solid fa-coins"></i>
+        </div>
+
+        <div>
+          <h3>Finance</h3>
+          <p>420 Jobs</p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <div class="category-icon hr">
+          <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div>
+          <h3>Human Resources</h3>
+          <p>360 Jobs</p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <div class="category-icon support">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <div>
+          <h3>Customer Support</h3>
+          <p>580 Jobs</p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURED JOBS -->
+
+  <section class="jobs section-padding" id="jobs">
+
+    <div class="section-title">
+
+      <div>
+        <p class="section-small-title">
+          TOP OPPORTUNITIES
+        </p>
+
+        <h2>Featured jobs</h2>
+
+        <p>
+          Apply to the latest opportunities from leading companies.
+        </p>
+      </div>
+
+      <a href="#">
+        Browse all jobs
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+
+    <div class="job-grid">
+
+
+      <!-- JOB 1 -->
+
+      <div class="job-card">
+
+        <div class="job-header">
+
+          <div class="job-company">
+
+            <div class="job-logo google-logo">
+              G
+            </div>
+
+            <div>
+              <h4>Google</h4>
+              <p>2 hours ago</p>
+            </div>
+
+          </div>
+
+          <button class="save-btn">
+            <i class="fa-regular fa-bookmark"></i>
+          </button>
+
+        </div>
+
+
+        <h3>Frontend Developer</h3>
+
+
+        <div class="job-information">
+
+          <span>
+            <i class="fa-solid fa-location-dot"></i>
+            Bengaluru
+          </span>
+
+          <span>
+            <i class="fa-solid fa-briefcase"></i>
+            Full Time
+          </span>
+
+        </div>
+
+
+        <div class="skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>React</span>
+        </div>
+
+
+        <div class="job-bottom">
+
+          <div>
+            <h4>₹8L - ₹12L</h4>
+            <p>Per year</p>
+          </div>
+
+          <button class="apply-btn">
+            Apply Now
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- JOB 2 -->
+
+      <div class="job-card">
+
+        <div class="job-header">
+
+          <div class="job-company">
+
+            <div class="job-logo microsoft-logo">
+              M
+            </div>
+
+            <div>
+              <h4>Microsoft</h4>
+              <p>5 hours ago</p>
+            </div>
+
+          </div>
+
+          <button class="save-btn">
+            <i class="fa-regular fa-bookmark"></i>
+          </button>
+
+        </div>
+
+
+        <h3>Software Engineer</h3>
+
+
+        <div class="job-information">
+
+          <span>
+            <i class="fa-solid fa-location-dot"></i>
+            Hyderabad
+          </span>
+
+          <span>
+            <i class="fa-solid fa-briefcase"></i>
+            Full Time
+          </span>
+
+        </div>
+
+
+        <div class="skills">
+          <span>Java</span>
+          <span>Python</span>
+          <span>SQL</span>
+        </div>
+
+
+        <div class="job-bottom">
+
+          <div>
+            <h4>₹10L - ₹16L</h4>
+            <p>Per year</p>
+          </div>
+
+          <button class="apply-btn">
+            Apply Now
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- JOB 3 -->
+
+      <div class="job-card">
+
+        <div class="job-header">
+
+          <div class="job-company">
+
+            <div class="job-logo infosys-logo">
+              I
+            </div>
+
+            <div>
+              <h4>Infosys</h4>
+              <p>1 day ago</p>
+            </div>
+
+          </div>
+
+          <button class="save-btn">
+            <i class="fa-regular fa-bookmark"></i>
+          </button>
+
+        </div>
+
+
+        <h3>Business Analyst</h3>
+
+
+        <div class="job-information">
+
+          <span>
+            <i class="fa-solid fa-location-dot"></i>
+            Chennai
+          </span>
+
+          <span>
+            <i class="fa-solid fa-briefcase"></i>
+            Full Time
+          </span>
+
+        </div>
+
+
+        <div class="skills">
+          <span>Excel</span>
+          <span>SQL</span>
+          <span>Power BI</span>
+        </div>
+
+
+        <div class="job-bottom">
+
+          <div>
+            <h4>₹4L - ₹7L</h4>
+            <p>Per year</p>
+          </div>
+
+          <button class="apply-btn">
+            Apply Now
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- JOB 4 -->
+
+      <div class="job-card">
+
+        <div class="job-header">
+
+          <div class="job-company">
+
+            <div class="job-logo amazon-logo">
+              A
+            </div>
+
+            <div>
+              <h4>Amazon</h4>
+              <p>2 days ago</p>
+            </div>
+
+          </div>
+
+          <button class="save-btn">
+            <i class="fa-regular fa-bookmark"></i>
+          </button>
+
+        </div>
+
+
+        <h3>Data Analyst</h3>
+
+
+        <div class="job-information">
+
+          <span>
+            <i class="fa-solid fa-location-dot"></i>
+            Coimbatore
+          </span>
+
+          <span>
+            <i class="fa-solid fa-briefcase"></i>
+            Entry Level
+          </span>
+
+        </div>
+
+
+        <div class="skills">
+          <span>Python</span>
+          <span>SQL</span>
+          <span>Tableau</span>
+        </div>
+
+
+        <div class="job-bottom">
+
+          <div>
+            <h4>₹5L - ₹9L</h4>
+            <p>Per year</p>
+          </div>
+
+          <button class="apply-btn">
+            Apply Now
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- JOB 5 -->
+
+      <div class="job-card">
+
+        <div class="job-header">
+
+          <div class="job-company">
+
+            <div class="job-logo tcs-logo">
+              T
+            </div>
+
+            <div>
+              <h4>TCS</h4>
+              <p>2 days ago</p>
+            </div>
+
+          </div>
+
+          <button class="save-btn">
+            <i class="fa-regular fa-bookmark"></i>
+          </button>
+
+        </div>
+
+
+        <h3>Java Developer</h3>
+
+
+        <div class="job-information">
+
+          <span>
+            <i class="fa-solid fa-location-dot"></i>
+            Chennai
+          </span>
+
+          <span>
+            <i class="fa-solid fa-briefcase"></i>
+            Full Time
+          </span>
+
+        </div>
+
+
+        <div class="skills">
+          <span>Java</span>
+          <span>Spring</span>
+          <span>MySQL</span>
+        </div>
+
+
+        <div class="job-bottom">
+
+          <div>
+            <h4>₹4L - ₹6L</h4>
+            <p>Per year</p>
+          </div>
+
+          <button class="apply-btn">
+            Apply Now
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- JOB 6 -->
+
+      <div class="job-card">
+
+        <div class="job-header">
+
+          <div class="job-company">
+
+            <div class="job-logo wipro-logo">
+              W
+            </div>
+
+            <div>
+              <h4>Wipro</h4>
+              <p>3 days ago</p>
+            </div>
+
+          </div>
+
+          <button class="save-btn">
+            <i class="fa-regular fa-bookmark"></i>
+          </button>
+
+        </div>
+
+
+        <h3>UI / UX Designer</h3>
+
+
+        <div class="job-information">
+
+          <span>
+            <i class="fa-solid fa-location-dot"></i>
+            Bengaluru
+          </span>
+
+          <span>
+            <i class="fa-solid fa-briefcase"></i>
+            Full Time
+          </span>
+
+        </div>
+
+
+        <div class="skills">
+          <span>Figma</span>
+          <span>UI Design</span>
+          <span>UX</span>
+        </div>
+
+
+        <div class="job-bottom">
+
+          <div>
+            <h4>₹4L - ₹8L</h4>
+            <p>Per year</p>
+          </div>
+
+          <button class="apply-btn">
+            Apply Now
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+
+  <section class="how-it-works section-padding">
+
+    <div class="center-title">
+
+      <p class="section-small-title">
+        GET STARTED
+      </p>
+
+      <h2>Find your next opportunity easily</h2>
+
+      <p>
+        Three simple steps to start your career journey.
+      </p>
+
+    </div>
+
+
+    <div class="steps-grid">
+
+      <div class="step-card">
+
+        <div class="step-icon">
+          <i class="fa-solid fa-user-plus"></i>
+        </div>
+
+        <span>01</span>
+
+        <h3>Create your profile</h3>
+
+        <p>
+          Create an account and add your education,
+          skills and experience.
+        </p>
+
+      </div>
+
+
+      <div class="step-card">
+
+        <div class="step-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <span>02</span>
+
+        <h3>Search jobs</h3>
+
+        <p>
+          Explore thousands of jobs and find roles
+          matching your skills.
+        </p>
+
+      </div>
+
+
+      <div class="step-card">
+
+        <div class="step-icon">
+          <i class="fa-solid fa-paper-plane"></i>
+        </div>
+
+        <span>03</span>
+
+        <h3>Apply instantly</h3>
+
+        <p>
+          Submit your application directly and connect
+          with employers.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <div>
+      <p>START YOUR CAREER TODAY</p>
+
+      <h2>
+        Your dream job is only one click away.
+      </h2>
+    </div>
+
+    <button>
+      Find Jobs
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div class="footer-about">
+
+        <div class="logo">
+
+          <div class="logo-box">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+
+          <h2>Career<span>Hub</span></h2>
+
+        </div>
+
+        <p>
+          Helping job seekers find better career opportunities
+          and companies find talented people.
+        </p>
+
+        <div class="social-icons">
+
+          <a href="#">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>For Candidates</h4>
+
+        <a href="#">Browse Jobs</a>
+        <a href="#">Browse Companies</a>
+        <a href="#">Job Alerts</a>
+        <a href="#">Career Tips</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>For Employers</h4>
+
+        <a href="#">Post a Job</a>
+        <a href="#">Search Candidates</a>
+        <a href="#">Pricing</a>
+        <a href="#">Employer Login</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Company</h4>
+
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 CareerHub. All rights reserved.
+      </p>
+
+      <p>
+        Made for job seekers.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

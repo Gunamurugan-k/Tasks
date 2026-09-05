@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 10 - Portfolio Website</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<style>
+  body{ font-family:'Segoe UI',Arial,sans-serif; background:#0f0f1a; color:#e8e8ff; }
+  .navbar{ background:#0f0f1a; border-bottom:1px solid #23233a; }
+  .accent{ color:#7c5cff; }
+  .hero{ min-height:80vh; display:flex; align-items:center; }
+  .avatar-circle{ width:180px; height:180px; border-radius:50%; background:linear-gradient(135deg,#7c5cff,#00d4ff); }
+  .btn-accent{ background:#7c5cff; border-color:#7c5cff; }
+  .skill-badge{ background:#1c1c2e; border:1px solid #2e2e4a; border-radius:20px; padding:.4rem 1rem; font-size:.85rem; }
+  .project-card{ background:#1c1c2e; border-radius:10px; border:1px solid #2e2e4a; }
+  .project-img{ background:#2e2e4a; aspect-ratio:16/9; border-radius:10px 10px 0 0; }
+  section{ padding:4rem 0; }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand navbar-dark px-4 py-3">
+  <span class="fw-bold">Gunamurugan<span class="accent">.K</span></span>
+  <div class="ms-auto d-flex gap-4">
+    <a href="#about" class="text-decoration-none text-light small">About</a>
+    <a href="#skills" class="text-decoration-none text-light small">Skills</a>
+    <a href="#projects" class="text-decoration-none text-light small">Projects</a>
+    <a href="#contact" class="text-decoration-none text-light small">Contact</a>
+  </div>
+</nav>
+
+<div class="hero container text-center">
+  <div class="avatar-circle mx-auto mb-4"></div>
+  <h1 class="display-5 fw-bold">Hi, I'm Gunamurugan K</h1>
+  <p class="fs-5 accent">AI & Data Science Student | ML Enthusiast</p>
+  <p class="mx-auto" style="max-width:600px;">Building end-to-end machine learning projects and preparing for GATE DA 2027, with a passion for turning data into meaningful insights.</p>
+  <a href="#projects" class="btn btn-accent px-4 py-2 mt-2">View My Work</a>
+</div>
+
+<section id="skills" class="container">
+  <h3 class="fw-bold mb-4">Skills</h3>
+  <div class="d-flex flex-wrap gap-2">
+    <span class="skill-badge">Python</span>
+    <span class="skill-badge">Machine Learning</span>
+    <span class="skill-badge">Scikit-learn</span>
+    <span class="skill-badge">Pandas & NumPy</span>
+    <span class="skill-badge">Streamlit</span>
+    <span class="skill-badge">SQL</span>
+    <span class="skill-badge">HTML/CSS/Bootstrap</span>
+    <span class="skill-badge">Data Visualization</span>
+  </div>
+</section>
+
+<section id="projects" class="container">
+  <h3 class="fw-bold mb-4">Projects</h3>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="project-card">
+        <div class="project-img"></div>
+        <div class="p-3">
+          <h6 class="fw-bold">Customer Churn Prediction</h6>
+          <p class="small">Logistic Regression model on IBM Telco dataset - 94.2% accuracy.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="project-card">
+        <div class="project-img"></div>
+        <div class="p-3">
+          <h6 class="fw-bold">Loan Approval Prediction</h6>
+          <p class="small">Random Forest model, 98% accuracy, deployed with Streamlit.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="project-card">
+        <div class="project-img"></div>
+        <div class="p-3">
+          <h6 class="fw-bold">IPL 2026 Season Analytics</h6>
+          <p class="small">Data cleaning and dashboarding of IPL match results & points table.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="container text-center">
+  <h3 class="fw-bold mb-3">My Contacts</h3>
+  <p><i class="bi bi-envelope"></i> gunakannan@example.com</p>
+  <p><i class="bi bi-github"></i> github.com/Gunamurugan</p>
+  <p><i class="bi bi-linkedin"></i> linkedin.com/in/gunamurugan-k</p>
+</section>
+</body>
+</html>

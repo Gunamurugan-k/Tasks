@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SkyCast - Weather App</title>
+
+  <link rel="stylesheet" href="Weatherapp.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <div class="logo">
+      <div class="logo-icon">
+        <i class="fa-solid fa-cloud-sun"></i>
+      </div>
+
+      <h2>Sky<span>Cast</span></h2>
+    </div>
+
+
+    <nav>
+      <a href="#" class="active">Weather</a>
+      <a href="#forecast">Forecast</a>
+      <a href="#details">Details</a>
+      <a href="#">Map</a>
+    </nav>
+
+
+    <div class="nav-right">
+
+      <button class="location-button">
+        <i class="fa-solid fa-location-dot"></i>
+        My Location
+      </button>
+
+      <div class="profile">
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- MAIN -->
+
+  <main>
+
+    <!-- WELCOME -->
+
+    <section class="top-section">
+
+      <div>
+        <p class="small-text">GOOD MORNING</p>
+
+        <h1>Weather today</h1>
+
+        <p class="description">
+          Check today's weather conditions and plan your day.
+        </p>
+      </div>
+
+
+      <!-- SEARCH -->
+
+      <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+          type="text"
+          placeholder="Search city..."
+        >
+
+        <button>
+          Search
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- WEATHER HERO -->
+
+    <section class="weather-hero">
+
+      <div class="hero-left">
+
+        <div class="location">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          <div>
+            <h3>Chennai, India</h3>
+            <p>Saturday, September 5</p>
+          </div>
+
+        </div>
+
+
+        <div class="main-weather">
+
+          <div class="weather-icon">
+            <i class="fa-solid fa-cloud-sun"></i>
+          </div>
+
+
+          <div class="temperature">
+
+            <h2>30°</h2>
+
+            <div>
+              <h3>Partly Cloudy</h3>
+              <p>Feels like 33°</p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <p class="weather-message">
+          A warm and partly cloudy day. Light winds expected
+          throughout the afternoon.
+        </p>
+
+      </div>
+
+
+      <!-- HERO DETAILS -->
+
+      <div class="hero-details">
+
+        <div class="detail-box">
+
+          <div class="detail-icon humidity-icon">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+
+          <div>
+            <p>Humidity</p>
+            <h3>72%</h3>
+          </div>
+
+        </div>
+
+
+        <div class="detail-box">
+
+          <div class="detail-icon wind-icon">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+
+          <div>
+            <p>Wind</p>
+            <h3>14 km/h</h3>
+          </div>
+
+        </div>
+
+
+        <div class="detail-box">
+
+          <div class="detail-icon pressure-icon">
+            <i class="fa-solid fa-gauge-high"></i>
+          </div>
+
+          <div>
+            <p>Pressure</p>
+            <h3>1012 hPa</h3>
+          </div>
+
+        </div>
+
+
+        <div class="detail-box">
+
+          <div class="detail-icon visibility-icon">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+
+          <div>
+            <p>Visibility</p>
+            <h3>10 km</h3>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOURLY FORECAST -->
+
+    <section class="content-section" id="forecast">
+
+      <div class="section-title">
+
+        <div>
+          <p class="section-label">TODAY</p>
+          <h2>Hourly Forecast</h2>
+        </div>
+
+        <a href="#">
+          View details
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+
+      <div class="hourly-grid">
+
+        <div class="hour-card active-hour">
+          <p>Now</p>
+          <i class="fa-solid fa-cloud-sun"></i>
+          <h3>30°</h3>
+          <span>10%</span>
+        </div>
+
+
+        <div class="hour-card">
+          <p>11 AM</p>
+          <i class="fa-solid fa-cloud-sun"></i>
+          <h3>31°</h3>
+          <span>12%</span>
+        </div>
+
+
+        <div class="hour-card">
+          <p>12 PM</p>
+          <i class="fa-solid fa-sun"></i>
+          <h3>32°</h3>
+          <span>5%</span>
+        </div>
+
+
+        <div class="hour-card">
+          <p>1 PM</p>
+          <i class="fa-solid fa-sun"></i>
+          <h3>33°</h3>
+          <span>4%</span>
+        </div>
+
+
+        <div class="hour-card">
+          <p>2 PM</p>
+          <i class="fa-solid fa-cloud"></i>
+          <h3>32°</h3>
+          <span>15%</span>
+        </div>
+
+
+        <div class="hour-card">
+          <p>3 PM</p>
+          <i class="fa-solid fa-cloud-rain"></i>
+          <h3>30°</h3>
+          <span>35%</span>
+        </div>
+
+
+        <div class="hour-card">
+          <p>4 PM</p>
+          <i class="fa-solid fa-cloud"></i>
+          <h3>29°</h3>
+          <span>25%</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WEATHER DETAILS -->
+
+    <section class="dashboard-grid" id="details">
+
+
+      <!-- WEEK FORECAST -->
+
+      <div class="week-card">
+
+        <div class="card-heading">
+          <h2>7-Day Forecast</h2>
+
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+
+
+        <div class="day-row">
+
+          <strong>Today</strong>
+
+          <div>
+            <i class="fa-solid fa-cloud-sun"></i>
+            <span>Partly Cloudy</span>
+          </div>
+
+          <p>
+            <b>30°</b>
+            25°
+          </p>
+
+        </div>
+
+
+        <div class="day-row">
+
+          <strong>Sunday</strong>
+
+          <div>
+            <i class="fa-solid fa-cloud-rain"></i>
+            <span>Rain</span>
+          </div>
+
+          <p>
+            <b>29°</b>
+            24°
+          </p>
+
+        </div>
+
+
+        <div class="day-row">
+
+          <strong>Monday</strong>
+
+          <div>
+            <i class="fa-solid fa-sun"></i>
+            <span>Sunny</span>
+          </div>
+
+          <p>
+            <b>32°</b>
+            25°
+          </p>
+
+        </div>
+
+
+        <div class="day-row">
+
+          <strong>Tuesday</strong>
+
+          <div>
+            <i class="fa-solid fa-cloud"></i>
+            <span>Cloudy</span>
+          </div>
+
+          <p>
+            <b>31°</b>
+            24°
+          </p>
+
+        </div>
+
+
+        <div class="day-row">
+
+          <strong>Wednesday</strong>
+
+          <div>
+            <i class="fa-solid fa-cloud-showers-heavy"></i>
+            <span>Showers</span>
+          </div>
+
+          <p>
+            <b>28°</b>
+            23°
+          </p>
+
+        </div>
+
+
+        <div class="day-row">
+
+          <strong>Thursday</strong>
+
+          <div>
+            <i class="fa-solid fa-cloud-sun"></i>
+            <span>Partly Cloudy</span>
+          </div>
+
+          <p>
+            <b>30°</b>
+            24°
+          </p>
+
+        </div>
+
+
+        <div class="day-row">
+
+          <strong>Friday</strong>
+
+          <div>
+            <i class="fa-solid fa-sun"></i>
+            <span>Sunny</span>
+          </div>
+
+          <p>
+            <b>33°</b>
+            25°
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- SIDE CARDS -->
+
+      <div class="side-grid">
+
+
+        <!-- AIR QUALITY -->
+
+        <div class="info-card air-card">
+
+          <div class="info-title">
+
+            <div>
+              <p>AIR QUALITY</p>
+              <h3>Good</h3>
+            </div>
+
+            <i class="fa-solid fa-leaf"></i>
+
+          </div>
+
+
+          <div class="aqi">
+
+            <div class="aqi-number">
+              42
+            </div>
+
+            <div>
+              <p>Air Quality Index</p>
+              <span>
+                Perfect day for outdoor activities.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="progress">
+            <div></div>
+          </div>
+
+        </div>
+
+
+        <!-- SUN -->
+
+        <div class="info-card sun-card">
+
+          <div class="info-title">
+
+            <div>
+              <p>SUNRISE & SUNSET</p>
+              <h3>Sun</h3>
+            </div>
+
+            <i class="fa-solid fa-sun"></i>
+
+          </div>
+
+
+          <div class="sun-times">
+
+            <div>
+
+              <div class="sun-icon sunrise">
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+
+              <p>Sunrise</p>
+
+              <h3>6:02 AM</h3>
+
+            </div>
+
+
+            <div>
+
+              <div class="sun-icon sunset">
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+
+              <p>Sunset</p>
+
+              <h3>6:22 PM</h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- UV -->
+
+        <div class="info-card uv-card">
+
+          <div class="info-title">
+
+            <div>
+              <p>UV INDEX</p>
+              <h3>High</h3>
+            </div>
+
+            <i class="fa-solid fa-sun"></i>
+
+          </div>
+
+
+          <div class="uv-content">
+
+            <h2>7</h2>
+
+            <div>
+              <p>High UV exposure</p>
+
+              <span>
+                Use sunscreen when going outside.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RAIN -->
+
+        <div class="info-card rain-card">
+
+          <div class="info-title">
+
+            <div>
+              <p>PRECIPITATION</p>
+              <h3>Rain chance</h3>
+            </div>
+
+            <i class="fa-solid fa-cloud-rain"></i>
+
+          </div>
+
+
+          <div class="rain-content">
+
+            <h2>35%</h2>
+
+            <p>
+              Light rain may occur during the afternoon.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="weather-alert">
+
+      <div class="alert-icon">
+        <i class="fa-solid fa-bell"></i>
+      </div>
+
+
+      <div>
+
+        <p>WEATHER ALERTS</p>
+
+        <h2>Never get surprised by the weather.</h2>
+
+        <span>
+          Enable notifications to receive important weather updates.
+        </span>
+
+      </div>
+
+
+      <button>
+        Enable Alerts
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-logo">
+
+      <div class="logo-icon">
+        <i class="fa-solid fa-cloud-sun"></i>
+      </div>
+
+      <div>
+        <h2>Sky<span>Cast</span></h2>
+        <p>Your daily weather companion.</p>
+      </div>
+
+    </div>
+
+
+    <p>
+      © 2026 SkyCast. All rights reserved.
+    </p>
+
+
+    <div class="socials">
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+      <i class="fa-brands fa-facebook-f"></i>
+    </div>
+
+  </footer>
+
+</body>
+</html>

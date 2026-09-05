@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ChatFlow</title>
+
+  <link rel="stylesheet" href="ChatApp.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+
+        <div class="brand">
+          <div class="brand-icon">
+            <i class="fa-solid fa-comment-dots"></i>
+          </div>
+
+          <h2>Chat<span>Flow</span></h2>
+        </div>
+
+        <button class="new-chat-btn">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+
+      </div>
+
+
+      <!-- USER PROFILE -->
+
+      <div class="user-profile">
+
+        <div class="profile-image">
+          <img
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="User"
+          >
+
+          <span class="online-dot"></span>
+        </div>
+
+        <div class="profile-details">
+          <h3>Alex Martin</h3>
+          <p>Available</p>
+        </div>
+
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+      </div>
+
+
+      <!-- SEARCH -->
+
+      <div class="chat-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+          type="text"
+          placeholder="Search conversations"
+        >
+
+      </div>
+
+
+      <!-- FILTERS -->
+
+      <div class="chat-filters">
+
+        <button class="active-filter">All</button>
+        <button>Unread</button>
+        <button>Groups</button>
+
+      </div>
+
+
+      <!-- CHAT LIST -->
+
+      <div class="chat-list">
+
+        <p class="section-label">MESSAGES</p>
+
+
+        <!-- CHAT 1 -->
+
+        <div class="chat-item active-chat">
+
+          <div class="avatar">
+
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="Emma"
+            >
+
+            <span class="online"></span>
+
+          </div>
+
+
+          <div class="chat-info">
+
+            <div class="chat-name-row">
+              <h4>Emma Watson</h4>
+              <span>10:42 AM</span>
+            </div>
+
+            <div class="chat-preview-row">
+              <p>That sounds great! Let's do it.</p>
+              <span class="unread-count">2</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHAT 2 -->
+
+        <div class="chat-item">
+
+          <div class="avatar">
+
+            <img
+              src="https://randomuser.me/api/portraits/men/46.jpg"
+              alt="Daniel"
+            >
+
+            <span class="online"></span>
+
+          </div>
+
+
+          <div class="chat-info">
+
+            <div class="chat-name-row">
+              <h4>Daniel Lee</h4>
+              <span>9:35 AM</span>
+            </div>
+
+            <div class="chat-preview-row">
+              <p>Can you send me the latest files?</p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHAT 3 -->
+
+        <div class="chat-item">
+
+          <div class="avatar">
+
+            <img
+              src="https://randomuser.me/api/portraits/women/65.jpg"
+              alt="Sophia"
+            >
+
+          </div>
+
+
+          <div class="chat-info">
+
+            <div class="chat-name-row">
+              <h4>Sophia Brown</h4>
+              <span>Yesterday</span>
+            </div>
+
+            <div class="chat-preview-row">
+              <p>Thanks for your help 😊</p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHAT 4 -->
+
+        <div class="chat-item">
+
+          <div class="avatar group-avatar">
+            <i class="fa-solid fa-users"></i>
+          </div>
+
+
+          <div class="chat-info">
+
+            <div class="chat-name-row">
+              <h4>Project Team</h4>
+              <span>Yesterday</span>
+            </div>
+
+            <div class="chat-preview-row">
+              <p>Michael: Meeting at 3 PM.</p>
+              <span class="unread-count">5</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHAT 5 -->
+
+        <div class="chat-item">
+
+          <div class="avatar">
+
+            <img
+              src="https://randomuser.me/api/portraits/men/52.jpg"
+              alt="James"
+            >
+
+          </div>
+
+
+          <div class="chat-info">
+
+            <div class="chat-name-row">
+              <h4>James Wilson</h4>
+              <span>Mon</span>
+            </div>
+
+            <div class="chat-preview-row">
+              <p>See you soon!</p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHAT 6 -->
+
+        <div class="chat-item">
+
+          <div class="avatar">
+
+            <img
+              src="https://randomuser.me/api/portraits/women/22.jpg"
+              alt="Olivia"
+            >
+
+            <span class="online"></span>
+
+          </div>
+
+
+          <div class="chat-info">
+
+            <div class="chat-name-row">
+              <h4>Olivia Smith</h4>
+              <span>Sun</span>
+            </div>
+
+            <div class="chat-preview-row">
+              <p>Let's catch up tomorrow.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+
+    <!-- =========================
+         CHAT AREA
+    ========================== -->
+
+    <main class="chat-area">
+
+      <!-- CHAT HEADER -->
+
+      <header class="chat-header">
+
+        <div class="chat-user">
+
+          <div class="avatar">
+
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="Emma"
+            >
+
+            <span class="online"></span>
+
+          </div>
+
+
+          <div>
+            <h3>Emma Watson</h3>
+
+            <p>
+              <span class="status-dot"></span>
+              Online
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+          <button title="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+          <button title="Voice Call">
+            <i class="fa-solid fa-phone"></i>
+          </button>
+
+          <button title="Video Call">
+            <i class="fa-solid fa-video"></i>
+          </button>
+
+          <button title="More">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </button>
+
+        </div>
+
+      </header>
+
+
+      <!-- MESSAGES -->
+
+      <section class="messages">
+
+        <div class="date-divider">
+          <span>Today</span>
+        </div>
+
+
+        <!-- RECEIVED -->
+
+        <div class="message received">
+
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            alt="Emma"
+          >
+
+          <div>
+
+            <div class="message-bubble">
+              Hey! How is the new project going?
+            </div>
+
+            <span class="message-time">
+              10:25 AM
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SENT -->
+
+        <div class="message sent">
+
+          <div>
+
+            <div class="message-bubble">
+              It's going really well! I'm working on the chat interface now.
+            </div>
+
+            <span class="message-time">
+              10:28 AM
+              <i class="fa-solid fa-check-double"></i>
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- RECEIVED -->
+
+        <div class="message received">
+
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            alt="Emma"
+          >
+
+          <div>
+
+            <div class="message-bubble">
+              Nice! Are you building it with HTML and CSS?
+            </div>
+
+            <span class="message-time">
+              10:30 AM
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SENT -->
+
+        <div class="message sent">
+
+          <div>
+
+            <div class="message-bubble">
+              Yes. First I'm creating the UI, then I'll add JavaScript.
+            </div>
+
+            <span class="message-time">
+              10:32 AM
+              <i class="fa-solid fa-check-double"></i>
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- IMAGE MESSAGE -->
+
+        <div class="message received">
+
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            alt="Emma"
+          >
+
+          <div>
+
+            <div class="message-bubble image-message">
+
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                alt="Laptop"
+              >
+
+              <p>
+                Something like this layout would look professional.
+              </p>
+
+            </div>
+
+            <span class="message-time">
+              10:36 AM
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SENT -->
+
+        <div class="message sent">
+
+          <div>
+
+            <div class="message-bubble">
+              That looks perfect. I'll use a clean blue and purple theme.
+            </div>
+
+            <span class="message-time">
+              10:40 AM
+              <i class="fa-solid fa-check-double"></i>
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- RECEIVED -->
+
+        <div class="message received">
+
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            alt="Emma"
+          >
+
+          <div>
+
+            <div class="message-bubble">
+              That sounds great! Let's do it. 🚀
+            </div>
+
+            <span class="message-time">
+              10:42 AM
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- MESSAGE INPUT -->
+
+      <div class="message-input-area">
+
+        <button class="input-icon">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+
+        <button class="input-icon">
+          <i class="fa-regular fa-face-smile"></i>
+        </button>
+
+
+        <div class="message-input">
+
+          <input
+            type="text"
+            placeholder="Type a message..."
+          >
+
+          <button>
+            <i class="fa-solid fa-paperclip"></i>
+          </button>
+
+        </div>
+
+
+        <button class="voice-btn">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+
+
+        <button class="send-btn">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+
+      </div>
+
+    </main>
+
+
+    <!-- =========================
+         RIGHT DETAILS PANEL
+    ========================== -->
+
+    <aside class="details-panel">
+
+      <button class="close-panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+
+      <div class="contact-profile">
+
+        <div class="large-avatar">
+
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            alt="Emma"
+          >
+
+          <span></span>
+
+        </div>
+
+
+        <h2>Emma Watson</h2>
+
+        <p>Product Designer</p>
+
+
+        <div class="contact-actions">
+
+          <div>
+            <button>
+              <i class="fa-solid fa-phone"></i>
+            </button>
+
+            <span>Audio</span>
+          </div>
+
+
+          <div>
+            <button>
+              <i class="fa-solid fa-video"></i>
+            </button>
+
+            <span>Video</span>
+          </div>
+
+
+          <div>
+            <button>
+              <i class="fa-solid fa-bell"></i>
+            </button>
+
+            <span>Mute</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- INFO -->
+
+      <div class="info-section">
+
+        <h4>Information</h4>
+
+
+        <div class="info-row">
+
+          <i class="fa-regular fa-envelope"></i>
+
+          <div>
+            <span>Email</span>
+            <p>emma@example.com</p>
+          </div>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          <div>
+            <span>Location</span>
+            <p>London, United Kingdom</p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SHARED FILES -->
+
+      <div class="shared-section">
+
+        <div class="shared-title">
+          <h4>Shared Files</h4>
+          <a href="#">View all</a>
+        </div>
+
+
+        <div class="file">
+
+          <div class="file-icon pdf">
+            <i class="fa-solid fa-file-pdf"></i>
+          </div>
+
+          <div>
+            <h5>Project.pdf</h5>
+            <p>2.4 MB</p>
+          </div>
+
+          <i class="fa-solid fa-download"></i>
+
+        </div>
+
+
+        <div class="file">
+
+          <div class="file-icon doc">
+            <i class="fa-solid fa-file-word"></i>
+          </div>
+
+          <div>
+            <h5>Requirements.docx</h5>
+            <p>850 KB</p>
+          </div>
+
+          <i class="fa-solid fa-download"></i>
+
+        </div>
+
+
+        <div class="file">
+
+          <div class="file-icon zip">
+            <i class="fa-solid fa-file-zipper"></i>
+          </div>
+
+          <div>
+            <h5>Assets.zip</h5>
+            <p>12 MB</p>
+          </div>
+
+          <i class="fa-solid fa-download"></i>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</body>
+</html>

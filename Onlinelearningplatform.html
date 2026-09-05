@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LearnHub - Online Learning Platform</title>
+
+  <link rel="stylesheet" href="onlinelearningplatform.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <header class="navbar">
+
+    <div class="logo">
+
+      <div class="logo-icon">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+
+      <h2>Learn<span>Hub</span></h2>
+
+    </div>
+
+
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#categories">Categories</a>
+      <a href="#instructors">Instructors</a>
+    </nav>
+
+
+    <div class="nav-search">
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <input
+        type="text"
+        placeholder="Search courses..."
+      >
+
+    </div>
+
+
+    <div class="nav-buttons">
+
+      <button class="login-btn">
+        Log in
+      </button>
+
+      <button class="signup-btn">
+        Sign Up
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="hero-left">
+
+      <div class="hero-badge">
+        <i class="fa-solid fa-star"></i>
+        Learn from industry experts
+      </div>
+
+
+      <h1>
+        Learn new skills.
+        <span>Build your future.</span>
+      </h1>
+
+
+      <p>
+        Access high-quality courses from expert instructors
+        and develop the skills you need to reach your career goals.
+      </p>
+
+
+      <div class="hero-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+          type="text"
+          placeholder="What do you want to learn?"
+        >
+
+        <button>
+          Search Courses
+        </button>
+
+      </div>
+
+
+      <div class="popular-searches">
+
+        <span>Popular:</span>
+
+        <a href="#">Web Development</a>
+        <a href="#">Python</a>
+        <a href="#">Java</a>
+        <a href="#">UI/UX</a>
+
+      </div>
+
+
+      <div class="hero-stats">
+
+        <div>
+          <h3>25K+</h3>
+          <p>Students</p>
+        </div>
+
+        <div>
+          <h3>1,200+</h3>
+          <p>Courses</p>
+        </div>
+
+        <div>
+          <h3>350+</h3>
+          <p>Instructors</p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-right">
+
+      <div class="hero-card">
+
+        <div class="course-preview">
+
+          <div class="preview-icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+
+          <div>
+            <p>POPULAR COURSE</p>
+
+            <h3>
+              Complete Web Development
+            </h3>
+
+            <span>
+              HTML, CSS & JavaScript
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="learning-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+            alt="Students learning"
+          >
+
+          <div class="play-button">
+            <i class="fa-solid fa-play"></i>
+          </div>
+
+        </div>
+
+
+        <div class="progress-section">
+
+          <div class="progress-info">
+            <span>Course progress</span>
+            <strong>72%</strong>
+          </div>
+
+          <div class="progress-bar">
+            <div></div>
+          </div>
+
+        </div>
+
+
+        <div class="preview-bottom">
+
+          <div class="students">
+
+            <img
+              src="https://randomuser.me/api/portraits/men/31.jpg"
+              alt=""
+            >
+
+            <img
+              src="https://randomuser.me/api/portraits/women/42.jpg"
+              alt=""
+            >
+
+            <img
+              src="https://randomuser.me/api/portraits/men/45.jpg"
+              alt=""
+            >
+
+            <span>+2.5K students</span>
+
+          </div>
+
+
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            4.9
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TRUSTED SECTION
+  ========================== -->
+
+  <section class="trusted">
+
+    <p>
+      Trusted by learners from leading companies
+    </p>
+
+
+    <div class="company-list">
+
+      <span>
+        <i class="fa-brands fa-google"></i>
+        Google
+      </span>
+
+      <span>Microsoft</span>
+
+      <span>amazon</span>
+
+      <span>Infosys</span>
+
+      <span>TCS</span>
+
+      <span>Wipro</span>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CATEGORIES
+  ========================== -->
+
+  <section class="section categories" id="categories">
+
+    <div class="section-header">
+
+      <div>
+
+        <p class="small-title">
+          EXPLORE TOPICS
+        </p>
+
+        <h2>
+          Browse popular categories
+        </h2>
+
+        <p>
+          Explore courses based on your interests and career goals.
+        </p>
+
+      </div>
+
+
+      <a href="#">
+        View all categories
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+      <div class="category-card">
+
+        <div class="category-icon development">
+          <i class="fa-solid fa-code"></i>
+        </div>
+
+        <h3>Development</h3>
+
+        <p>320 Courses</p>
+
+        <span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <div class="category-icon design">
+          <i class="fa-solid fa-pen-ruler"></i>
+        </div>
+
+        <h3>Design</h3>
+
+        <p>180 Courses</p>
+
+        <span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <div class="category-icon business">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+
+        <h3>Business</h3>
+
+        <p>210 Courses</p>
+
+        <span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <div class="category-icon data">
+          <i class="fa-solid fa-database"></i>
+        </div>
+
+        <h3>Data Science</h3>
+
+        <p>145 Courses</p>
+
+        <span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <div class="category-icon marketing">
+          <i class="fa-solid fa-bullhorn"></i>
+        </div>
+
+        <h3>Marketing</h3>
+
+        <p>130 Courses</p>
+
+        <span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <div class="category-icon ai">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+
+        <h3>AI & Machine Learning</h3>
+
+        <p>95 Courses</p>
+
+        <span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       COURSES
+  ========================== -->
+
+  <section class="section courses" id="courses">
+
+    <div class="section-header">
+
+      <div>
+
+        <p class="small-title">
+          START LEARNING
+        </p>
+
+        <h2>
+          Featured courses
+        </h2>
+
+        <p>
+          Learn from highly rated courses created by professionals.
+        </p>
+
+      </div>
+
+
+      <a href="#">
+        Explore all courses
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+
+    <div class="course-grid">
+
+
+      <!-- COURSE 1 -->
+
+      <div class="course-card">
+
+        <div class="course-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+            alt="Web Development"
+          >
+
+          <span class="course-label">
+            Bestseller
+          </span>
+
+          <button class="wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+        </div>
+
+
+        <div class="course-content">
+
+          <div class="course-category">
+            Development
+          </div>
+
+          <h3>
+            Complete Web Development Bootcamp
+          </h3>
+
+
+          <div class="instructor">
+
+            <img
+              src="https://randomuser.me/api/portraits/men/22.jpg"
+              alt=""
+            >
+
+            <span>David Miller</span>
+
+          </div>
+
+
+          <div class="course-info">
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              24 Hours
+            </span>
+
+            <span>
+              <i class="fa-solid fa-layer-group"></i>
+              86 Lessons
+            </span>
+
+          </div>
+
+
+          <div class="course-bottom">
+
+            <div class="course-rating">
+
+              <i class="fa-solid fa-star"></i>
+
+              <strong>4.9</strong>
+
+              <span>(2.8K)</span>
+
+            </div>
+
+            <div class="price">
+              ₹499
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- COURSE 2 -->
+
+      <div class="course-card">
+
+        <div class="course-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+            alt="Data Science"
+          >
+
+          <span class="course-label new-label">
+            New
+          </span>
+
+          <button class="wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+        </div>
+
+
+        <div class="course-content">
+
+          <div class="course-category data-category">
+            Data Science
+          </div>
+
+          <h3>
+            Python for Data Science & Analytics
+          </h3>
+
+
+          <div class="instructor">
+
+            <img
+              src="https://randomuser.me/api/portraits/women/35.jpg"
+              alt=""
+            >
+
+            <span>Sophia Johnson</span>
+
+          </div>
+
+
+          <div class="course-info">
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              18 Hours
+            </span>
+
+            <span>
+              <i class="fa-solid fa-layer-group"></i>
+              72 Lessons
+            </span>
+
+          </div>
+
+
+          <div class="course-bottom">
+
+            <div class="course-rating">
+
+              <i class="fa-solid fa-star"></i>
+
+              <strong>4.8</strong>
+
+              <span>(1.9K)</span>
+
+            </div>
+
+            <div class="price">
+              ₹599
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- COURSE 3 -->
+
+      <div class="course-card">
+
+        <div class="course-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978"
+            alt="UI UX"
+          >
+
+          <span class="course-label">
+            Popular
+          </span>
+
+          <button class="wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+        </div>
+
+
+        <div class="course-content">
+
+          <div class="course-category design-category">
+            Design
+          </div>
+
+          <h3>
+            UI/UX Design Masterclass with Figma
+          </h3>
+
+
+          <div class="instructor">
+
+            <img
+              src="https://randomuser.me/api/portraits/women/45.jpg"
+              alt=""
+            >
+
+            <span>Emma Brown</span>
+
+          </div>
+
+
+          <div class="course-info">
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              15 Hours
+            </span>
+
+            <span>
+              <i class="fa-solid fa-layer-group"></i>
+              60 Lessons
+            </span>
+
+          </div>
+
+
+          <div class="course-bottom">
+
+            <div class="course-rating">
+
+              <i class="fa-solid fa-star"></i>
+
+              <strong>4.9</strong>
+
+              <span>(1.5K)</span>
+
+            </div>
+
+            <div class="price">
+              ₹449
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- COURSE 4 -->
+
+      <div class="course-card">
+
+        <div class="course-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+            alt="Java"
+          >
+
+          <span class="course-label trending-label">
+            Trending
+          </span>
+
+          <button class="wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+        </div>
+
+
+        <div class="course-content">
+
+          <div class="course-category">
+            Programming
+          </div>
+
+          <h3>
+            Java Programming from Beginner to Advanced
+          </h3>
+
+
+          <div class="instructor">
+
+            <img
+              src="https://randomuser.me/api/portraits/men/44.jpg"
+              alt=""
+            >
+
+            <span>Michael Lee</span>
+
+          </div>
+
+
+          <div class="course-info">
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              28 Hours
+            </span>
+
+            <span>
+              <i class="fa-solid fa-layer-group"></i>
+              95 Lessons
+            </span>
+
+          </div>
+
+
+          <div class="course-bottom">
+
+            <div class="course-rating">
+
+              <i class="fa-solid fa-star"></i>
+
+              <strong>4.7</strong>
+
+              <span>(3.1K)</span>
+
+            </div>
+
+            <div class="price">
+              ₹699
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- COURSE 5 -->
+
+      <div class="course-card">
+
+        <div class="course-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475"
+            alt="AI"
+          >
+
+          <span class="course-label new-label">
+            New
+          </span>
+
+          <button class="wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+        </div>
+
+
+        <div class="course-content">
+
+          <div class="course-category ai-category">
+            Artificial Intelligence
+          </div>
+
+          <h3>
+            AI & Machine Learning Fundamentals
+          </h3>
+
+
+          <div class="instructor">
+
+            <img
+              src="https://randomuser.me/api/portraits/men/54.jpg"
+              alt=""
+            >
+
+            <span>James Wilson</span>
+
+          </div>
+
+
+          <div class="course-info">
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              22 Hours
+            </span>
+
+            <span>
+              <i class="fa-solid fa-layer-group"></i>
+              80 Lessons
+            </span>
+
+          </div>
+
+
+          <div class="course-bottom">
+
+            <div class="course-rating">
+
+              <i class="fa-solid fa-star"></i>
+
+              <strong>4.8</strong>
+
+              <span>(980)</span>
+
+            </div>
+
+            <div class="price">
+              ₹799
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- COURSE 6 -->
+
+      <div class="course-card">
+
+        <div class="course-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+            alt="Business"
+          >
+
+          <span class="course-label">
+            Bestseller
+          </span>
+
+          <button class="wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+        </div>
+
+
+        <div class="course-content">
+
+          <div class="course-category business-category">
+            Business
+          </div>
+
+          <h3>
+            Business Analytics with Excel & Power BI
+          </h3>
+
+
+          <div class="instructor">
+
+            <img
+              src="https://randomuser.me/api/portraits/women/60.jpg"
+              alt=""
+            >
+
+            <span>Olivia Martin</span>
+
+          </div>
+
+
+          <div class="course-info">
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              14 Hours
+            </span>
+
+            <span>
+              <i class="fa-solid fa-layer-group"></i>
+              54 Lessons
+            </span>
+
+          </div>
+
+
+          <div class="course-bottom">
+
+            <div class="course-rating">
+
+              <i class="fa-solid fa-star"></i>
+
+              <strong>4.9</strong>
+
+              <span>(2.2K)</span>
+
+            </div>
+
+            <div class="price">
+              ₹549
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BENEFITS
+  ========================== -->
+
+  <section class="benefits">
+
+    <div class="benefit-card">
+
+      <div class="benefit-icon">
+        <i class="fa-solid fa-laptop"></i>
+      </div>
+
+      <div>
+        <h3>Learn anywhere</h3>
+
+        <p>
+          Access your courses on laptop, tablet or mobile.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="benefit-card">
+
+      <div class="benefit-icon certificate">
+        <i class="fa-solid fa-certificate"></i>
+      </div>
+
+      <div>
+        <h3>Earn certificates</h3>
+
+        <p>
+          Get certificates after completing your courses.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="benefit-card">
+
+      <div class="benefit-icon lifetime">
+        <i class="fa-solid fa-infinity"></i>
+      </div>
+
+      <div>
+        <h3>Lifetime access</h3>
+
+        <p>
+          Learn at your own pace with unlimited access.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="benefit-card">
+
+      <div class="benefit-icon support">
+        <i class="fa-solid fa-headset"></i>
+      </div>
+
+      <div>
+        <h3>Expert support</h3>
+
+        <p>
+          Get help from instructors whenever you need it.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       INSTRUCTORS
+  ========================== -->
+
+  <section class="section instructors" id="instructors">
+
+    <div class="center-heading">
+
+      <p class="small-title">
+        LEARN FROM THE BEST
+      </p>
+
+      <h2>
+        Meet our expert instructors
+      </h2>
+
+      <p>
+        Learn directly from experienced professionals.
+      </p>
+
+    </div>
+
+
+    <div class="instructor-grid">
+
+
+      <div class="instructor-card">
+
+        <img
+          src="https://randomuser.me/api/portraits/men/22.jpg"
+          alt=""
+        >
+
+        <h3>David Miller</h3>
+
+        <p>Senior Web Developer</p>
+
+        <div class="instructor-stats">
+
+          <span>
+            <i class="fa-solid fa-star"></i>
+            4.9
+          </span>
+
+          <span>
+            25K Students
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="instructor-card">
+
+        <img
+          src="https://randomuser.me/api/portraits/women/35.jpg"
+          alt=""
+        >
+
+        <h3>Sophia Johnson</h3>
+
+        <p>Data Scientist</p>
+
+        <div class="instructor-stats">
+
+          <span>
+            <i class="fa-solid fa-star"></i>
+            4.8
+          </span>
+
+          <span>
+            18K Students
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="instructor-card">
+
+        <img
+          src="https://randomuser.me/api/portraits/women/45.jpg"
+          alt=""
+        >
+
+        <h3>Emma Brown</h3>
+
+        <p>Product Designer</p>
+
+        <div class="instructor-stats">
+
+          <span>
+            <i class="fa-solid fa-star"></i>
+            4.9
+          </span>
+
+          <span>
+            15K Students
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="instructor-card">
+
+        <img
+          src="https://randomuser.me/api/portraits/men/54.jpg"
+          alt=""
+        >
+
+        <h3>James Wilson</h3>
+
+        <p>AI Engineer</p>
+
+        <div class="instructor-stats">
+
+          <span>
+            <i class="fa-solid fa-star"></i>
+            4.9
+          </span>
+
+          <span>
+            21K Students
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TESTIMONIAL
+  ========================== -->
+
+  <section class="testimonial-section">
+
+    <div class="center-heading">
+
+      <p class="small-title">
+        STUDENT STORIES
+      </p>
+
+      <h2>
+        What our learners say
+      </h2>
+
+    </div>
+
+
+    <div class="testimonial-grid">
+
+
+      <div class="testimonial">
+
+        <div class="quote">
+          <i class="fa-solid fa-quote-left"></i>
+        </div>
+
+        <p>
+          LearnHub helped me understand web development
+          clearly and build my first real project.
+        </p>
+
+        <div class="student">
+
+          <img
+            src="https://randomuser.me/api/portraits/men/31.jpg"
+            alt=""
+          >
+
+          <div>
+            <h4>Arun Kumar</h4>
+            <span>Web Development Student</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="testimonial">
+
+        <div class="quote">
+          <i class="fa-solid fa-quote-left"></i>
+        </div>
+
+        <p>
+          The lessons are simple, practical and easy
+          to follow even for beginners.
+        </p>
+
+        <div class="student">
+
+          <img
+            src="https://randomuser.me/api/portraits/women/28.jpg"
+            alt=""
+          >
+
+          <div>
+            <h4>Priya Sharma</h4>
+            <span>Data Science Student</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="testimonial">
+
+        <div class="quote">
+          <i class="fa-solid fa-quote-left"></i>
+        </div>
+
+        <p>
+          I improved my technical skills and completed
+          several projects for my portfolio.
+        </p>
+
+        <div class="student">
+
+          <img
+            src="https://randomuser.me/api/portraits/men/40.jpg"
+            alt=""
+          >
+
+          <div>
+            <h4>Rahul Verma</h4>
+            <span>Java Student</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CTA
+  ========================== -->
+
+  <section class="cta">
+
+    <div>
+
+      <p>
+        START LEARNING TODAY
+      </p>
+
+      <h2>
+        Build skills that move your career forward.
+      </h2>
+
+      <span>
+        Join thousands of students learning with LearnHub.
+      </span>
+
+    </div>
+
+
+    <button>
+      Explore Courses
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div class="footer-about">
+
+        <div class="logo">
+
+          <div class="logo-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+
+          <h2>
+            Learn<span>Hub</span>
+          </h2>
+
+        </div>
+
+
+        <p>
+          Learn new skills, build your career and achieve
+          your goals with expert-led online courses.
+        </p>
+
+
+        <div class="social-icons">
+
+          <a href="#">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Learn</h4>
+
+        <a href="#">Browse Courses</a>
+        <a href="#">Categories</a>
+        <a href="#">Certificates</a>
+        <a href="#">Career Paths</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Company</h4>
+
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+        <a href="#">Blog</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Support</h4>
+
+        <a href="#">Help Center</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">FAQ</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 LearnHub. All rights reserved.
+      </p>
+
+      <p>
+        Learn today. Lead tomorrow.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
