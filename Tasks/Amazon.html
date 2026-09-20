@@ -1,55 +1,705 @@
-<style>
-    .amazon:hover{
-        color: darkorange;
-    }
-    .shoe{
-        font-weight: bold;
-        font-size: 24px;
-    }
-    .price{
-        color: green;
-        font-size: 16px;
-    }
-    .addtocart-button{
-        color:black;
-        background-color: gold;
-        width:125px;
-        height: 36px;
-        border: none;
-        border-radius: 18px;
-        cursor:pointer;
-        font-weight: bold;
-        transition: background-color 0.15s,opacity 0.15s;
-    }
-    .addtocart-button:hover{
-        background-color: rgb(245, 209, 3);
-    }
-    .addtocart-button:active{
-        opacity: 0.6;
-    }
-    .buynow-button{
-        color:black;
-        background-color: darkorange;
-        width:125px;
-        height: 36px;
-        border: none;
-        border-radius: 18px;
-        margin-left: 6px;
-        cursor:pointer;
-        font-weight: bold;
-        transition: background-color 0.15s,opacity 0.15s;
-    }
-    .buynow-button:hover{
-        background-color: rgb(245, 137, 4);
-    }
-    .buynow-button:active{
-        opacity: 0.6;
-    }
-</style>
 
-<a class="amazon" href="https://www.amazon.com/dp/B0G4MMLKP5" target="_blank">Back to amazon</a>
-<p class="shoe">Nike Pegasus Running Shoes</p>
-<p class="price">Rs 11,520 only- In stock.</p>
-<p>Free Delivery Tomorrow.</p>
-<button class="addtocart-button">Add to cart</button>
-<button class="buynow-button">Buy now</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon - iPhone 15 Product</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #0f1111;
+  background: #fff;
+}
+
+button, select, input { font: inherit; }
+button { cursor: pointer; }
+
+header {
+  background: #131921;
+  color: white;
+  padding: 11px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  font-size: 29px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  color: white;
+  white-space: nowrap;
+}
+
+.logo span { color: #ff9900; }
+
+.deliver { font-size: 12px; white-space: nowrap; }
+.deliver strong { font-size: 14px; }
+
+.search {
+  display: flex;
+  flex: 1;
+  height: 41px;
+}
+
+.search select {
+  border: 0;
+  background: #e6e6e6;
+  padding: 5px;
+  border-radius: 4px 0 0 4px;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  padding: 10px;
+  outline: none;
+}
+
+.search button {
+  border: 0;
+  background: #febd69;
+  padding: 0 19px;
+  border-radius: 0 4px 4px 0;
+  font-size: 20px;
+}
+
+.nav-link {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.nav-link strong { font-size: 14px; }
+
+.cart-btn {
+  color: white;
+  background: none;
+  border: none;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.cart-btn span { color: #ff9900; font-size: 19px; }
+
+.subnav {
+  background: #232f3e;
+  padding: 10px 24px;
+  display: flex;
+  gap: 23px;
+  color: white;
+  font-size: 14px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: #565959;
+  padding: 19px 35px;
+}
+
+.container {
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 30px 50px;
+  display: grid;
+  grid-template-columns: minmax(300px, 40%) minmax(320px, 1fr) 245px;
+  gap: 27px;
+}
+
+.gallery {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.thumb {
+  width: 52px;
+  height: 62px;
+  background: #f8f9fa;
+  border: 1px solid #aaa;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  color: #586579;
+  transition: .2s;
+}
+
+.thumb.active, .thumb:hover {
+  border: 2px solid #007185;
+  box-shadow: 0 0 4px #007185;
+}
+
+.main-image {
+  flex: 1;
+  min-height: 480px;
+  background: #f7f8fa;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.phone {
+  width: 215px;
+  height: 418px;
+  border: 5px solid #a8b4c2;
+  border-radius: 37px;
+  background: #cfdae7;
+  box-shadow: 14px 20px 28px #0002, inset 0 0 3px #777;
+  position: relative;
+  transition: transform .3s, background .3s;
+}
+
+.phone::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 111px;
+  width: 3px;
+  height: 44px;
+  background: #9ba9b6;
+  border-radius: 3px;
+}
+
+.camera-bump {
+  position: absolute;
+  top: 19px;
+  left: 17px;
+  width: 100px;
+  height: 104px;
+  background: #bcc9d8;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px #5553;
+}
+
+.lens {
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  background: radial-gradient(circle at 40% 35%,
+    #405370 0%, #0a172a 28%, #111 53%, #7a899b 58%, #242c35 72%);
+  border: 3px solid #a5b2c1;
+  border-radius: 50%;
+}
+
+.lens.one { top: 9px; left: 9px; }
+.lens.two { bottom: 9px; right: 9px; }
+
+.flash {
+  position: absolute;
+  right: 15px;
+  top: 18px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff9d8;
+}
+
+.apple {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 47px;
+  color: #a2aebc;
+}
+
+.image-hint {
+  position: absolute;
+  bottom: 17px;
+  color: #777;
+  font-size: 12px;
+}
+
+.product-info h1 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+.blue { color: #007185; cursor: pointer; }
+.blue:hover { text-decoration: underline; }
+
+.rating { margin: 12px 0; font-size: 14px; }
+.stars { color: #de7924; font-size: 19px; }
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 17px 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 9px;
+  background: #cc0c39;
+  color: white;
+  font-size: 12px;
+}
+
+.price-line { margin-top: 10px; }
+.discount { color: #cc0c39; font-size: 24px; }
+.price { font-size: 29px; margin-left: 10px; }
+.mrp { color: #565959; font-size: 12px; margin-top: 7px; }
+
+.prime { color: #007185; font-weight: bold; margin-top: 14px; }
+
+.option-title { font-size: 14px; margin: 19px 0 10px; }
+
+.variants { display: flex; gap: 9px; flex-wrap: wrap; }
+
+.variant {
+  border: 1px solid #888;
+  border-radius: 5px;
+  background: white;
+  padding: 10px 15px;
+  min-width: 55px;
+}
+
+.variant.active {
+  border: 2px solid #007185;
+  background: #edf8fb;
+  font-weight: bold;
+}
+
+.dot {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+}
+
+.specs {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 135px 1fr;
+  gap: 13px;
+  font-size: 14px;
+}
+
+.about { margin-top: 26px; line-height: 1.7; }
+.about h3 { margin-bottom: 5px; }
+.about ul { padding-left: 20px; }
+
+.buy-box {
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  padding: 17px;
+  height: fit-content;
+  font-size: 14px;
+}
+
+.buy-price { font-size: 27px; }
+.delivery { line-height: 1.7; margin: 15px 0; }
+.stock { color: #007600; font-size: 18px; margin: 17px 0; }
+
+.qty {
+  background: #f0f2f2;
+  border: 1px solid #adb1b8;
+  border-radius: 7px;
+  padding: 7px;
+  width: 100%;
+  margin-bottom: 13px;
+}
+
+.action {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.add { background: #ffd814; border-color: #fcd200; }
+.buy { background: #ffa41c; border-color: #ff8f00; }
+.action:hover { filter: brightness(.96); }
+
+.ship-info { line-height: 1.9; font-size: 12px; color: #565959; }
+
+footer {
+  padding: 35px;
+  background: #232f3e;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #232f3e;
+  color: white;
+  padding: 15px 23px;
+  border-radius: 9px;
+  box-shadow: 0 5px 20px #0003;
+  z-index: 100;
+  display: none;
+}
+
+@media(max-width: 1100px) {
+  .container {
+    grid-template-columns: minmax(280px, 1fr) minmax(320px, 1fr);
+  }
+  .buy-box { grid-column: 2; }
+  .nav-link, .deliver { display: none; }
+}
+
+@media(max-width: 700px) {
+  header { padding: 12px; gap: 12px; flex-wrap: wrap; }
+  .logo { font-size: 24px; }
+  .search { order: 3; flex-basis: 100%; }
+  .cart-btn { margin-left: auto; }
+  .container { display: block; padding: 0 15px 35px; }
+  .breadcrumb { padding: 15px; }
+  .gallery { margin-bottom: 25px; }
+  .main-image { min-height: 385px; }
+  .phone { transform: scale(.8); }
+  .phone.side { transform: scale(.8) rotateY(32deg) rotate(-5deg); }
+  .phone.zoom { transform: scale(1); }
+  .buy-box { margin-top: 25px; }
+  .product-info h1 { font-size: 21px; }
+  .subnav { padding: 12px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">amazon<span>⌣</span></div>
+  <div class="deliver">Deliver to<br><strong>📍 India</strong></div>
+
+  <div class="search">
+    <select aria-label="Search category">
+      <option>All</option>
+      <option>Electronics</option>
+    </select>
+    <input id="searchInput" placeholder="Search Amazon.in">
+    <button onclick="searchProduct()" aria-label="Search">⌕</button>
+  </div>
+
+  <div class="nav-link">Hello, sign in<br><strong>Account & Lists</strong></div>
+  <div class="nav-link">Returns<br><strong>& Orders</strong></div>
+  <button class="cart-btn" onclick="showCart()">🛒 Cart <span id="cartCount">0</span></button>
+</header>
+
+<nav class="subnav">
+  <span>☰ All</span>
+  <span>Today's Deals</span>
+  <span>Mobiles</span>
+  <span>Electronics</span>
+  <span>Customer Service</span>
+  <span>Amazon Pay</span>
+  <span>New Releases</span>
+</nav>
+
+<div class="breadcrumb">Electronics › Mobiles & Accessories › Smartphones › Apple</div>
+
+<main class="container">
+
+  <section class="gallery">
+    <div class="thumbnails">
+      <button class="thumb active" onclick="setView(0,this)">▣</button>
+      <button class="thumb" onclick="setView(1,this)">◩</button>
+      <button class="thumb" onclick="setView(2,this)">⊞</button>
+    </div>
+
+    <div class="main-image">
+      <div class="phone" id="phone">
+        <div class="camera-bump">
+          <div class="lens one"></div>
+          <div class="lens two"></div>
+          <div class="flash"></div>
+        </div>
+        <div class="apple">●</div>
+      </div>
+      <div class="image-hint">Product illustration · Select a view</div>
+    </div>
+  </section>
+
+  <section class="product-info" id="product">
+    <h1>Apple iPhone 15 (128 GB) - Blue | Dynamic Island, 48MP Main Camera, USB-C and A16 Bionic Chip</h1>
+
+    <div class="blue">Visit the Apple Store</div>
+
+    <div class="rating">
+      4.5 <span class="stars">★★★★★</span>
+      <span class="blue">32,456 ratings</span>
+    </div>
+
+    <p class="blue">1K+ bought in past month</p>
+    <hr>
+
+    <span class="badge">Limited time deal</span>
+
+    <div class="price-line">
+      <span class="discount">-12%</span>
+      <span class="price" id="mainPrice">₹69,999</span>
+    </div>
+
+    <div class="mrp">M.R.P.: <s id="mrp">₹79,900</s></div>
+    <p>Inclusive of all taxes</p>
+    <div class="prime">✓ prime</div>
+    <hr>
+
+    <p class="option-title"><strong>Colour: <span id="selectedColor">Blue</span></strong></p>
+
+    <div class="variants">
+      <button class="variant active" data-color="Blue" onclick="changeColor('Blue',this)">
+        <span class="dot" style="background:#cad9e8"></span>
+      </button>
+      <button class="variant" data-color="Pink" onclick="changeColor('Pink',this)">
+        <span class="dot" style="background:#eecbd5"></span>
+      </button>
+      <button class="variant" data-color="Black" onclick="changeColor('Black',this)">
+        <span class="dot" style="background:#424447"></span>
+      </button>
+      <button class="variant" data-color="Green" onclick="changeColor('Green',this)">
+        <span class="dot" style="background:#cfddc5"></span>
+      </button>
+      <button class="variant" data-color="Yellow" onclick="changeColor('Yellow',this)">
+        <span class="dot" style="background:#f4edbf"></span>
+      </button>
+    </div>
+
+    <p class="option-title"><strong>Size: <span id="selectedStorage">128 GB</span></strong></p>
+
+    <div class="variants">
+      <button class="variant active" onclick="changeStorage(128,this)">128 GB</button>
+      <button class="variant" onclick="changeStorage(256,this)">256 GB</button>
+      <button class="variant" onclick="changeStorage(512,this)">512 GB</button>
+    </div>
+
+    <hr>
+
+    <div class="specs">
+      <strong>Brand</strong><span>Apple</span>
+      <strong>Model</strong><span>iPhone 15</span>
+      <strong>Display</strong><span>6.1-inch Super Retina XDR</span>
+      <strong>Processor</strong><span>A16 Bionic Chip</span>
+      <strong>Camera</strong><span>48MP Main Camera</span>
+      <strong>Connectivity</strong><span>5G, Wi-Fi, Bluetooth</span>
+      <strong>Connector</strong><span>USB-C</span>
+    </div>
+
+    <div class="about">
+      <h3>About this item</h3>
+      <ul>
+        <li>Dynamic Island brings alerts and Live Activities to the screen.</li>
+        <li>Durable colour-infused glass and aluminium design.</li>
+        <li>Advanced dual-camera system with a 48MP Main Camera.</li>
+        <li>A16 Bionic chip for powerful everyday performance.</li>
+        <li>USB-C connectivity and all-day battery life.</li>
+      </ul>
+    </div>
+  </section>
+
+  <aside class="buy-box">
+    <div class="buy-price" id="buyPrice">₹69,999</div>
+    <div class="prime">✓ prime</div>
+
+    <div class="delivery">
+      <span class="blue">FREE delivery</span><br>
+      Check availability for your location.
+      <p class="blue">📍 Deliver to India</p>
+    </div>
+
+    <div class="stock">In stock</div>
+
+    <select class="qty" id="quantity" aria-label="Quantity">
+      <option value="1">Quantity: 1</option>
+      <option value="2">Quantity: 2</option>
+      <option value="3">Quantity: 3</option>
+      <option value="4">Quantity: 4</option>
+      <option value="5">Quantity: 5</option>
+    </select>
+
+    <button class="action add" onclick="addToCart()">Add to Cart</button>
+    <button class="action buy" onclick="buyNow()">Buy Now</button>
+
+    <div class="ship-info">
+      Ships from: Demo Store<br>
+      Sold by: Demo Store<br>
+      Payment: Demo only<br>
+      Returns: Demo policy
+    </div>
+
+    <hr>
+    <label><input type="checkbox"> Add gift options</label>
+  </aside>
+
+</main>
+
+<footer>
+  <strong>Amazon-inspired UI/UX Project</strong>
+  <p>Educational frontend demo · No real purchases or payments</p>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+let cart = 0;
+let color = "Blue";
+let storage = 128;
+let price = 69999;
+let toastTimer;
+
+const colorCodes = {
+  Blue: "#cfdae7",
+  Pink: "#eecbd5",
+  Black: "#424447",
+  Green: "#cfddc5",
+  Yellow: "#f4edbf"
+};
+
+function formatPrice(amount) {
+  return "₹" + amount.toLocaleString("en-IN");
+}
+
+function updatePrice() {
+  const prices = {
+    128: 69999,
+    256: 79999,
+    512: 99999
+  };
+
+  price = prices[storage];
+
+  document.getElementById("mainPrice").textContent = formatPrice(price);
+  document.getElementById("buyPrice").textContent = formatPrice(price);
+}
+
+function changeColor(newColor, button) {
+  color = newColor;
+
+  document.getElementById("selectedColor").textContent = color;
+  document.getElementById("phone").style.background = colorCodes[color];
+
+  document.querySelectorAll("[data-color]").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+}
+
+function changeStorage(newStorage, button) {
+  storage = newStorage;
+  document.getElementById("selectedStorage").textContent = storage + " GB";
+
+  button.parentElement.querySelectorAll(".variant").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+  updatePrice();
+}
+
+function setView(view, button) {
+  const phone = document.getElementById("phone");
+
+  phone.classList.remove("side", "zoom");
+
+  if (view === 1) phone.classList.add("side");
+  if (view === 2) phone.classList.add("zoom");
+
+  phone.style.transform =
+    view === 0 ? "rotate(0deg)" :
+    view === 1 ? "rotateY(32deg) rotate(-5deg)" :
+    "scale(1.16)";
+
+  document.querySelectorAll(".thumb").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+}
+
+function notify(message) {
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+  toast.style.display = "block";
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    toast.style.display = "none";
+  }, 3000);
+}
+
+function addToCart() {
+  const qty = Number(document.getElementById("quantity").value);
+
+  cart += qty;
+  document.getElementById("cartCount").textContent = cart;
+
+  notify(qty + " item(s) added to cart successfully!");
+}
+
+function showCart() {
+  notify("Your cart contains " + cart + " item(s).");
+}
+
+function buyNow() {
+  const qty = Number(document.getElementById("quantity").value);
+  const total = price * qty;
+
+  alert(
+    "Demo Checkout\n\n" +
+    "Apple iPhone 15\n" +
+    "Colour: " + color + "\n" +
+    "Storage: " + storage + " GB\n" +
+    "Quantity: " + qty + "\n" +
+    "Total: " + formatPrice(total) + "\n\n" +
+    "This is a UI demo. No payment will be processed."
+  );
+}
+
+function searchProduct() {
+  const query = document.getElementById("searchInput")
+    .value.trim().toLowerCase();
+
+  if (!query) {
+    document.getElementById("searchInput").focus();
+    return;
+  }
+
+  if (
+    query.includes("iphone") ||
+    query.includes("apple") ||
+    query.includes("mobile")
+  ) {
+    document.getElementById("product")
+      .scrollIntoView({ behavior: "smooth" });
+    notify("Showing iPhone 15");
+  } else {
+    notify("No matching products in this demo.");
+  }
+}
+
+document.getElementById("searchInput").addEventListener("keydown", event => {
+  if (event.key === "Enter") searchProduct();
+});
+</script>
+
+</body>
+</html>
