@@ -1,90 +1,1104 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Task 4 - Netflix Landing Page</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>Netflix - Movies & Series</title>
+
 <style>
-  body{ background:#141414; color:#fff; font-family:'Helvetica Neue',Arial,sans-serif; }
-  .navbar{ background:linear-gradient(180deg, rgba(0,0,0,.7), transparent); position:absolute; width:100%; z-index:10; }
-  .netflix-logo{ color:#e50914; font-weight:800; font-size:1.8rem; letter-spacing:-1px; }
-  .hero{ background:linear-gradient(180deg, rgba(20,20,20,.2) 0%, rgba(20,20,20,1) 100%), linear-gradient(120deg,#3a0a0a,#000); min-height:90vh; display:flex; align-items:center; }
-  .hero h1{ font-size:3rem; font-weight:800; }
-  .btn-play{ background:#fff; color:#000; font-weight:700; }
-  .btn-info{ background:rgba(109,109,110,.7); color:#fff; font-weight:700; }
-  .section-title{ font-weight:700; margin-top:2rem; margin-bottom:1rem; }
-  .poster{ background:#333; border-radius:4px; aspect-ratio:2/3; transition:transform .2s; }
-  .poster:hover{ transform:scale(1.05); }
-  .plan-card{ background:#000; border:1px solid #333; border-radius:6px; }
-  footer{ background:#000; color:#737373; padding:3rem 0; }
+:root {
+  --red: #e50914;
+  --background: #101010;
+  --muted: #b3b3b3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background: var(--background);
+}
+
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+/* NAVIGATION */
+
+header {
+  height: 72px;
+  padding: 0 5%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 3px 20px #0005;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--red);
+  letter-spacing: -2px;
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex: 1;
+}
+
+nav button {
+  border: none;
+  background: transparent;
+  color: #ddd;
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 8px 0;
+}
+
+nav button:hover,
+nav button.active {
+  color: white;
+  font-weight: bold;
+}
+
+.search-box {
+  padding: 10px 13px;
+  background: #191919;
+  color: white;
+  border: 1px solid #777;
+  border-radius: 4px;
+  width: 205px;
+  min-width: 100px;
+}
+
+.profile {
+  background: #167ab5;
+  height: 35px;
+  width: 35px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+/* HERO SECTION */
+
+.hero {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  padding: 60px 6%;
+  background:
+    linear-gradient(90deg,
+      #080808 0%,
+      #080808ef 35%,
+      #08080850 100%),
+    linear-gradient(140deg,#18122c,#4c1527);
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 65% 0 0;
+  background: linear-gradient(transparent,var(--background));
+  pointer-events: none;
+}
+
+.hero-poster {
+  position: absolute;
+  right: 9%;
+  top: 8%;
+  width: 310px;
+  height: 445px;
+  object-fit: cover;
+  border-radius: 9px;
+  box-shadow: 0 15px 60px #000b;
+  transform: rotate(5deg);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.hero-label {
+  letter-spacing: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.hero-label span {
+  color: var(--red);
+  font-size: 26px;
+}
+
+.hero h1 {
+  font-size: clamp(45px,6vw,78px);
+  line-height: 1.04;
+  margin: 18px 0;
+  letter-spacing: -2px;
+  text-shadow: 0 4px 20px #0008;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 14px;
+  color: #ddd;
+  flex-wrap: wrap;
+}
+
+.match {
+  color: #46d369;
+  font-weight: bold;
+}
+
+.age {
+  border: 1px solid #aaa;
+  padding: 3px 6px;
+}
+
+.hero p {
+  color: #eee;
+  line-height: 1.7;
+  font-size: 16px;
+  max-width: 530px;
+  margin: 23px 0;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.btn:hover { opacity: .83; }
+.btn-play { background: white; color: #111; }
+.btn-info { background: #777a; color: white; }
+
+/* MOVIE SECTIONS */
+
+main {
+  padding: 10px 5% 65px;
+  position: relative;
+  z-index: 3;
+}
+
+section { margin-bottom: 42px; }
+
+section h2 {
+  margin: 18px 0 20px;
+  font-size: 24px;
+}
+
+.category-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 0 23px;
+}
+
+.chip {
+  background: #262626;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 25px;
+  padding: 9px 19px;
+  transition: .2s;
+}
+
+.chip:hover { border-color: white; }
+
+.chip.active {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+/* MOVIE GRID */
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(6,minmax(0,1fr));
+  gap: 17px;
+}
+
+.movie-card {
+  background: #1c1c1c;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid #ffffff12;
+  min-width: 0;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px #000a;
+  border-color: #666;
+}
+
+.poster-box {
+  position: relative;
+  height: 270px;
+  overflow: hidden;
+  background: linear-gradient(145deg,#442037,#161627);
+  cursor: pointer;
+}
+
+.poster-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s;
+}
+
+.movie-card:hover .poster-box img {
+  transform: scale(1.06);
+}
+
+.poster-gradient {
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent,#000c);
+  pointer-events: none;
+}
+
+.poster-name {
+  position: absolute;
+  bottom: 13px;
+  left: 12px;
+  right: 12px;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px #000;
+  text-transform: uppercase;
+}
+
+.netflix-mark {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-weight: 900;
+  font-size: 21px;
+  color: var(--red);
+  text-shadow: 0 2px 5px black;
+}
+
+.movie-details { padding: 12px; }
+
+.movie-actions {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.round {
+  width: 33px;
+  height: 33px;
+  background: #2c2c2c;
+  border: 1px solid #777;
+  border-radius: 50%;
+  color: white;
+  font-size: 15px;
+}
+
+.round.play {
+  background: white;
+  color: black;
+  border: none;
+}
+
+.round:hover { background: #555; color: white; }
+
+.movie-meta {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+.movie-genre {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.empty-message {
+  color: #aaa;
+  padding: 35px 0;
+}
+
+/* MOVIE MODAL */
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000d;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.overlay.open { display: flex; }
+
+.modal {
+  width: min(620px,100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #181818;
+  border-radius: 9px;
+  box-shadow: 0 20px 70px #000a;
+}
+
+.modal-image {
+  position: relative;
+  height: 340px;
+  background: linear-gradient(145deg,#411729,#171827);
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 24%;
+}
+
+.modal-image::after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(transparent,#181818);
+  pointer-events: none;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: none;
+  border-radius: 50%;
+  background: #171717e8;
+  color: white;
+  width: 37px;
+  height: 37px;
+  font-size: 24px;
+  z-index: 2;
+}
+
+.modal-title {
+  position: absolute;
+  left: 26px;
+  bottom: 15px;
+  font-size: 33px;
+  font-weight: 900;
+  text-transform: uppercase;
+  z-index: 2;
+  text-shadow: 0 3px 12px black;
+}
+
+.modal-body { padding: 24px; }
+
+.modal-body p {
+  color: #ddd;
+  line-height: 1.7;
+  margin: 18px 0;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+footer {
+  border-top: 1px solid #333;
+  color: #999;
+  text-align: center;
+  padding: 35px 15px;
+  font-size: 13px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width: 1250px) {
+  .movie-grid {
+    grid-template-columns: repeat(4,minmax(0,1fr));
+  }
+}
+
+@media(max-width: 900px) {
+  .movie-grid {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+
+  .hero-poster {
+    right: -4%;
+    opacity: .5;
+  }
+
+  header { gap: 16px; }
+  nav { gap: 14px; }
+}
+
+@media(max-width: 650px) {
+  header {
+    height: auto;
+    min-height: 70px;
+    flex-wrap: wrap;
+    padding: 12px 15px;
+    gap: 12px;
+  }
+
+  .logo { font-size: 26px; }
+
+  nav {
+    order: 3;
+    flex-basis: 100%;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 3px;
+  }
+
+  nav button { font-size: 13px; }
+
+  .search-box {
+    flex: 1;
+    width: 100px;
+  }
+
+  .profile { display: none; }
+
+  .hero {
+    min-height: 485px;
+    padding: 40px 5%;
+  }
+
+  .hero h1 { font-size: 43px; }
+
+  .hero p { font-size: 14px; }
+
+  .hero-poster {
+    width: 270px;
+    height: 390px;
+    right: -95px;
+    top: 65px;
+    opacity: .25;
+  }
+
+  main { padding: 10px 15px 45px; }
+
+  section h2 { font-size: 21px; }
+
+  .movie-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 11px;
+  }
+
+  .poster-box { height: 235px; }
+
+  .poster-name { font-size: 16px; }
+
+  .movie-details { padding: 10px; }
+
+  .modal-image { height: 270px; }
+  .modal-title { font-size: 26px; }
+}
 </style>
 </head>
+
 <body>
-<nav class="navbar navbar-expand px-4 py-3">
-  <div class="netflix-logo">NETFLIX</div>
-  <div class="ms-auto"><button class="btn btn-danger btn-sm">Sign In</button></div>
-</nav>
 
-<div class="hero text-center px-3">
-  <div class="container">
-    <h1>Unlimited movies, TV shows and more</h1>
-    <p class="fs-5 mt-2">Starts at ₹149. Cancel anytime.</p>
-    <p class="mt-3">Ready to watch? Enter your email to create or restart your membership.</p>
-    <div class="d-flex justify-content-center gap-2 mt-3 flex-wrap">
-      <input type="email" class="form-control" style="max-width:320px;" placeholder="Email address">
-      <button class="btn btn-danger btn-lg">Get Started &raquo;</button>
+<!-- HEADER -->
+
+<header>
+  <div class="logo">NETFLIX</div>
+
+  <nav>
+    <button class="active" onclick="changePage('Home',this)">Home</button>
+    <button onclick="changePage('Series',this)">TV Shows</button>
+    <button onclick="changePage('Movie',this)">Movies</button>
+    <button onclick="changePage('My List',this)">My List</button>
+  </nav>
+
+  <input
+    type="search"
+    class="search-box"
+    id="searchInput"
+    placeholder="Search..."
+    aria-label="Search movies"
+  >
+
+  <div class="profile">G</div>
+</header>
+
+<!-- HERO -->
+
+<div class="hero" id="hero">
+
+  <img
+    class="hero-poster"
+    src="https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg"
+    alt="Stranger Things poster"
+  >
+
+  <div class="hero-content">
+    <div class="hero-label"><span>N</span> SERIES</div>
+
+    <h1>STRANGER<br>THINGS</h1>
+
+    <div class="hero-meta">
+      <span class="match">98% Match</span>
+      <span>2016</span>
+      <span class="age">16+</span>
+      <span>5 Seasons</span>
+    </div>
+
+    <p>
+      When a young boy vanishes, a small town uncovers
+      a mystery involving secret experiments, terrifying
+      supernatural forces, and one strange little girl.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="btn btn-play" onclick="openMovie(1)">▶ Play</button>
+      <button class="btn btn-info" onclick="openMovie(1)">ⓘ More Info</button>
     </div>
   </div>
+
 </div>
 
-<div class="container pb-5">
-  <h4 class="section-title">Trending Now</h4>
-  <div class="row row-cols-3 row-cols-md-6 g-2">
-    <div class="col"><div class="poster"></div></div>
-    <div class="col"><div class="poster"></div></div>
-    <div class="col"><div class="poster"></div></div>
-    <div class="col"><div class="poster"></div></div>
-    <div class="col"><div class="poster"></div></div>
-    <div class="col"><div class="poster"></div></div>
-  </div>
+<!-- MAIN CONTENT -->
 
-  <h4 class="section-title">Choose the plan that's right for you</h4>
-  <div class="row g-3 text-center">
-    <div class="col-md-4">
-      <div class="plan-card p-4">
-        <h5>Mobile</h5>
-        <p class="text-muted">₹149/month</p>
-        <p class="small">Good video quality on your phone/tablet.</p>
-      </div>
+<main>
+
+  <section>
+    <h2 id="sectionTitle">Popular on Netflix</h2>
+
+    <div class="category-bar" id="categoryBar">
+      <button class="chip active" onclick="changeGenre('All',this)">All</button>
+      <button class="chip" onclick="changeGenre('Action',this)">Action</button>
+      <button class="chip" onclick="changeGenre('Sci-Fi',this)">Sci-Fi</button>
+      <button class="chip" onclick="changeGenre('Drama',this)">Drama</button>
+      <button class="chip" onclick="changeGenre('Thriller',this)">Thriller</button>
+      <button class="chip" onclick="changeGenre('Mystery',this)">Mystery</button>
     </div>
-    <div class="col-md-4">
-      <div class="plan-card p-4 border-danger">
-        <h5>Standard</h5>
-        <p class="text-muted">₹499/month</p>
-        <p class="small">Full HD on 2 supported devices.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="plan-card p-4">
-        <h5>Premium</h5>
-        <p class="text-muted">₹649/month</p>
-        <p class="small">Ultra HD on 4 supported devices.</p>
-      </div>
-    </div>
-  </div>
-</div>
+
+    <div class="movie-grid" id="movieGrid"></div>
+
+    <p class="empty-message" id="emptyMessage" hidden>
+      No movies or series found.
+    </p>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
 
 <footer>
-  <div class="container">
-    <p>Questions? Call 000-800-919-1743</p>
-    <div class="row small">
-      <div class="col-6 col-md-3"><a href="#" class="text-decoration-none text-secondary d-block mb-2">FAQ</a><a href="#" class="text-decoration-none text-secondary d-block">Investor Relations</a></div>
-      <div class="col-6 col-md-3"><a href="#" class="text-decoration-none text-secondary d-block mb-2">Help Center</a><a href="#" class="text-decoration-none text-secondary d-block">Jobs</a></div>
-      <div class="col-6 col-md-3"><a href="#" class="text-decoration-none text-secondary d-block mb-2">Account</a><a href="#" class="text-decoration-none text-secondary d-block">Cookie Preferences</a></div>
-      <div class="col-6 col-md-3"><a href="#" class="text-decoration-none text-secondary d-block mb-2">Media Center</a><a href="#" class="text-decoration-none text-secondary d-block">Legal Notices</a></div>
+  <strong>Netflix-Inspired Website</strong>
+  <p style="margin-top:10px">
+    HTML • CSS • JavaScript | Educational UI/UX Project
+  </p>
+  <p style="margin-top:8px">
+    Not affiliated with Netflix. No real video streaming or payments.
+  </p>
+</footer>
+
+<!-- MOVIE DETAILS MODAL -->
+
+<div class="overlay" id="overlay" onclick="closeMovie(event)">
+
+  <div
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+
+    <div class="modal-image">
+      <img id="modalPoster" src="" alt="Movie poster">
+
+      <button class="close" onclick="closeMovie()" aria-label="Close">
+        ×
+      </button>
+
+      <div class="modal-title" id="modalTitle"></div>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="hero-meta" id="modalMeta"></div>
+
+      <p id="modalDescription"></p>
+
+      <div class="modal-actions">
+        <button class="btn btn-play" onclick="playMovie()">
+          ▶ Play
+        </button>
+
+        <button
+          class="btn btn-info"
+          id="modalListButton"
+          onclick="toggleSelectedMovie()"
+        >
+          + My List
+        </button>
+      </div>
+
     </div>
   </div>
-</footer>
+</div>
+
+<script>
+
+/* MOVIE DATA */
+
+const movies = [
+
+  {
+    id: 1,
+    title: "Stranger Things",
+    type: "Series",
+    genre: ["Sci-Fi", "Drama", "Thriller"],
+    year: 2016,
+    rating: 98,
+    age: "16+",
+    duration: "5 Seasons",
+    poster: "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg",
+    description:
+      "A young boy disappears, and his friends encounter a mysterious girl and supernatural forces."
+  },
+
+  {
+    id: 2,
+    title: "Money Heist",
+    type: "Series",
+    genre: ["Action", "Thriller", "Drama"],
+    year: 2017,
+    rating: 96,
+    age: "16+",
+    duration: "5 Parts",
+    poster: "https://image.tmdb.org/t/p/w500/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg",
+    description:
+      "A criminal mastermind recruits a group of thieves for an ambitious heist in Spain."
+  },
+
+  {
+    id: 3,
+    title: "Wednesday",
+    type: "Series",
+    genre: ["Mystery", "Thriller", "Drama"],
+    year: 2022,
+    rating: 94,
+    age: "13+",
+    duration: "2 Seasons",
+    poster: "https://image.tmdb.org/t/p/w500/9PFonBhy4cQy7Jz20NpMygczOkv.jpg",
+    description:
+      "Wednesday Addams investigates strange mysteries while attending Nevermore Academy."
+  },
+
+  {
+    id: 4,
+    title: "Squid Game",
+    type: "Series",
+    genre: ["Thriller", "Drama"],
+    year: 2021,
+    rating: 92,
+    age: "16+",
+    duration: "3 Seasons",
+    poster: "https://image.tmdb.org/t/p/w500/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg",
+    description:
+      "Hundreds of desperate contestants compete in dangerous games for an enormous cash prize."
+  },
+
+  {
+    id: 5,
+    title: "Dark",
+    type: "Series",
+    genre: ["Sci-Fi", "Mystery", "Drama"],
+    year: 2017,
+    rating: 97,
+    age: "16+",
+    duration: "3 Seasons",
+    poster: "https://image.tmdb.org/t/p/w500/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg",
+    description:
+      "A child's disappearance reveals a mystery involving four families and the secrets of time."
+  },
+
+  {
+    id: 6,
+    title: "Dune",
+    type: "Movie",
+    genre: ["Sci-Fi", "Action", "Drama"],
+    year: 2021,
+    rating: 95,
+    age: "13+",
+    duration: "2h 35m",
+    poster: "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+    description:
+      "Paul Atreides journeys to the dangerous desert planet Arrakis, where a great destiny awaits."
+  }
+
+];
+
+/* APPLICATION STATE */
+
+let currentPage = "Home";
+let currentGenre = "All";
+let searchText = "";
+let selectedMovie = null;
+let myList = [];
+
+/* LOAD SAVED LIST */
+
+try {
+  const stored = JSON.parse(
+    localStorage.getItem("netflix_my_list") || "[]"
+  );
+
+  if (Array.isArray(stored)) {
+    myList = stored;
+  }
+} catch (error) {
+  myList = [];
+}
+
+/* SAVE MY LIST */
+
+function saveMyList() {
+  try {
+    localStorage.setItem(
+      "netflix_my_list",
+      JSON.stringify(myList)
+    );
+  } catch (error) {
+    // Keep the demo working even if storage is disabled.
+  }
+}
+
+/* DISPLAY MOVIES */
+
+function renderMovies() {
+
+  const grid = document.getElementById("movieGrid");
+
+  const filtered = movies.filter(movie => {
+
+    const pageMatch =
+      currentPage === "Home" ||
+      (currentPage === "My List" && myList.includes(movie.id)) ||
+      movie.type === currentPage;
+
+    const genreMatch =
+      currentGenre === "All" ||
+      movie.genre.includes(currentGenre);
+
+    const searchMatch =
+      movie.title.toLowerCase().includes(searchText) ||
+      movie.genre.some(g =>
+        g.toLowerCase().includes(searchText)
+      );
+
+    return pageMatch && genreMatch && searchMatch;
+
+  });
+
+  grid.innerHTML = filtered.map(movie => {
+
+    const saved = myList.includes(movie.id);
+
+    return `
+      <article class="movie-card">
+
+        <div
+          class="poster-box"
+          onclick="openMovie(${movie.id})"
+        >
+
+          <img
+            src="${movie.poster}"
+            alt="${movie.title} poster"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          >
+
+          <div class="poster-gradient"></div>
+
+          <div class="netflix-mark">N</div>
+
+          <div class="poster-name">${movie.title}</div>
+
+        </div>
+
+        <div class="movie-details">
+
+          <div class="movie-actions">
+
+            <button
+              class="round play"
+              aria-label="Open ${movie.title}"
+              onclick="openMovie(${movie.id})"
+            >
+              ▶
+            </button>
+
+            <button
+              class="round"
+              aria-label="${saved ? "Remove from" : "Add to"} My List"
+              onclick="toggleMyList(${movie.id})"
+            >
+              ${saved ? "✓" : "+"}
+            </button>
+
+            <button
+              class="round"
+              aria-label="More information"
+              onclick="openMovie(${movie.id})"
+            >
+              ⓘ
+            </button>
+
+          </div>
+
+          <div class="movie-meta">
+            <span class="match">${movie.rating}% Match</span>
+            · ${movie.year} · ${movie.age}
+          </div>
+
+          <div class="movie-genre">
+            ${movie.genre.join(" • ")}
+          </div>
+
+        </div>
+
+      </article>
+    `;
+
+  }).join("");
+
+  document.getElementById("emptyMessage").hidden =
+    filtered.length > 0;
+
+}
+
+/* NAVIGATION */
+
+function changePage(page, button) {
+
+  currentPage = page;
+
+  document.querySelectorAll("nav button").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+
+  document.getElementById("hero").style.display =
+    page === "Home" ? "flex" : "none";
+
+  const titles = {
+    "Home": "Popular on Netflix",
+    "Series": "TV Shows",
+    "Movie": "Movies",
+    "My List": "My List"
+  };
+
+  document.getElementById("sectionTitle").textContent =
+    titles[page];
+
+  renderMovies();
+
+}
+
+/* GENRE FILTER */
+
+function changeGenre(genre, button) {
+
+  currentGenre = genre;
+
+  document.querySelectorAll(".chip").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+
+  renderMovies();
+
+}
+
+/* SEARCH */
+
+document.getElementById("searchInput")
+  .addEventListener("input", function(event) {
+
+    searchText = event.target.value
+      .trim()
+      .toLowerCase();
+
+    renderMovies();
+
+  });
+
+/* MY LIST */
+
+function toggleMyList(id) {
+
+  if (myList.includes(id)) {
+
+    myList = myList.filter(item => item !== id);
+
+  } else {
+
+    myList.push(id);
+
+  }
+
+  saveMyList();
+  renderMovies();
+  updateModalList();
+
+}
+
+/* OPEN MOVIE */
+
+function openMovie(id) {
+
+  const movie = movies.find(item => item.id === id);
+
+  if (!movie) return;
+
+  selectedMovie = movie;
+
+  document.getElementById("modalPoster").src =
+    movie.poster;
+
+  document.getElementById("modalPoster").alt =
+    movie.title + " poster";
+
+  document.getElementById("modalTitle").textContent =
+    movie.title;
+
+  document.getElementById("modalDescription").textContent =
+    movie.description;
+
+  document.getElementById("modalMeta").innerHTML = `
+    <span class="match">${movie.rating}% Match</span>
+    <span>${movie.year}</span>
+    <span class="age">${movie.age}</span>
+    <span>${movie.duration}</span>
+  `;
+
+  updateModalList();
+
+  document.getElementById("overlay")
+    .classList.add("open");
+
+  document.body.style.overflow = "hidden";
+
+}
+
+/* UPDATE MODAL MY LIST BUTTON */
+
+function updateModalList() {
+
+  if (!selectedMovie) return;
+
+  const saved = myList.includes(selectedMovie.id);
+
+  document.getElementById("modalListButton")
+    .textContent = saved ? "✓ In My List" : "+ My List";
+
+}
+
+/* TOGGLE MOVIE IN MODAL */
+
+function toggleSelectedMovie() {
+
+  if (selectedMovie) {
+    toggleMyList(selectedMovie.id);
+  }
+
+}
+
+/* CLOSE MOVIE */
+
+function closeMovie(event) {
+
+  if (event && event.target.id !== "overlay") {
+    return;
+  }
+
+  document.getElementById("overlay")
+    .classList.remove("open");
+
+  document.body.style.overflow = "";
+
+}
+
+/* ESCAPE KEY */
+
+document.addEventListener("keydown", function(event) {
+
+  if (event.key === "Escape") {
+    closeMovie();
+  }
+
+});
+
+/* PLAY DEMO */
+
+function playMovie() {
+
+  if (!selectedMovie) return;
+
+  alert(
+    selectedMovie.title +
+    "\n\nThis is a Netflix-style frontend project." +
+    "\nActual movie playback is not available."
+  );
+
+}
+
+/* INITIAL LOAD */
+
+renderMovies();
+
+</script>
+
 </body>
 </html>
